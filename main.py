@@ -2,9 +2,11 @@ from datasets import Dataset_cluster
 from datasets import Dataset_fcnn
 from fcnn_gpu import train
 from master import Mission_1
+from RNNTrainer import RNNTrainer
+from RNNpredicter import RNNpredicter
 import sys
 
-ds = Dataset_cluster("data")
+# ds = Dataset_cluster("data")
 config = {"映射": "人工",  # 可选"人工","FCNN"
           "手肘法线性映射": False,  # 可选"True","False"
           "离散速度数量": 10,  # 可选[0,infinity]
@@ -27,8 +29,13 @@ if __name__ == "__main__":
             index = int(input("请输入你要处理的用户的uid:"))
             ds.analysis(index, config)
     elif sys.argv[1] == 'train':
-        ds = Dataset_fcnn("data")
-        data = ds.connection(171798692091, config=config)
-        train(data, config=config)
+        if sys.argv[2] == 'FCNN':
+            ds = Dataset_fcnn("data")
+            data = ds.connection(171798692091, config=config)
+            train(data, config=config)
+        elif sys.argv[2] == 'RNN':
+            RNNTrainer(user_id=171798692103)
     elif sys.argv[1] == 'Mission1':
         Mission_1()
+    elif sys.argv[1] == 'predict':
+        RNNpredicter(uid=171798692103)

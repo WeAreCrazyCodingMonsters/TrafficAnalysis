@@ -75,11 +75,6 @@ class Data_Ana(object):
         df2array = np.array(df2list)
 
         outliers_indices = [1] * df2array.shape[0]
-        # isolation_forest = IsolationForest(contamination=0.05)
-        # isolation_forest.fit(df2array)
-        # outliers_pred = isolation_forest.predict(df2array).astype(int)
-        # outliers_indices = np.where(outliers_pred == -1)[0]
-        # inliers = np.array(df2array[outliers_pred == 1])
 
         n_list = np.zeros((df2array.shape[0], 0))
 

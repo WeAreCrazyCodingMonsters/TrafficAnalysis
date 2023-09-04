@@ -220,33 +220,7 @@ def Iso_forest(dataframe, contamination_ratio):
     return dataframe
 
 
-def tools_projection_multiple(df, args_list, label):
-    outlier = df[df[label] == 1].index
-    inliers = df[df[label] == 0].index
-    fig = plt.figure()
-    fig.set_size_inches(16, 8)
-    ax1 = fig.add_subplot(1, 3, 1, projection='3d')
-    ax1.scatter(df.loc[inliers, args_list[0]], df.loc[inliers, args_list[1]], df.loc[inliers, args_list[2]],
-                c='b', marker='o', label='inliers')
-    ax1.scatter(df.loc[outlier, args_list[0]], df.loc[outlier, args_list[1]], df.loc[outlier, args_list[2]],
-                c='r', marker='x', label='outliers')
-    ax1.set_title("x-{},y-{},z-{}".format(args_list[0], args_list[1], args_list[2]))
 
-    ax2 = fig.add_subplot(1, 3, 2, projection='3d')
-    ax2.scatter(df.loc[inliers, args_list[0]], df.loc[inliers, args_list[1]], df.loc[inliers, args_list[3]],
-                c='b', marker='o', label='inliers')
-    ax2.scatter(df.loc[outlier, args_list[0]], df.loc[outlier, args_list[1]], df.loc[outlier, args_list[3]],
-                c='r', marker='x', label='outliers')
-    ax2.set_title("x-{},y-{},z-{}".format(args_list[0], args_list[1], args_list[3]))
-
-    ax3 = fig.add_subplot(1, 3, 3, projection='3d')
-    ax3.scatter(df.loc[inliers, args_list[0]], df.loc[inliers, args_list[1]], df.loc[inliers, args_list[4]],
-                c='b', marker='o', label='inliers')
-    ax3.scatter(df.loc[outlier, args_list[0]], df.loc[outlier, args_list[1]], df.loc[outlier, args_list[4]],
-                c='r', marker='x', label='outliers')
-    ax3.set_title("x-{},y-{},z-{}".format(args_list[0], args_list[1], args_list[4]))
-    plt.tight_layout()
-    plt.show()
 
 
 def invert_dict(original_dict):
