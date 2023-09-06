@@ -69,3 +69,8 @@ python main.py predict
 4. RNN
    1. 循环神经网络训练
    2. 循环神经网络预测
+
+# 作者
+
+[葛钰峣 Yuyao Ge](https://github.com/GeYuYao-hub)，[包启延 Qiyan Bao](https://github.com/sTTTST)，[刘涛 Tao Liu](https://github.com/tingb0)，[赵士轲 Shike Zhao](https://github.com/Zskkkkk) ，[张子扬 Ziyang Zhang](https://github.com/SOMNAMBULI1ST)，[周镇涛 Zhentao Zhou](https://github.com/Nishino33)
+
